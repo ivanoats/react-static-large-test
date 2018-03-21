@@ -2,37 +2,37 @@ import fetch from 'node-fetch'
 
 export default {
   getSiteData: () => ({
-    title: 'React Static',
+    title: 'React Static'
   }),
   getRoutes: async () => {
-    const { data: posts } = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const { data: locations } = await fetch('http://localhost:3001/locations')
     return [
       {
         path: '/',
-        component: 'src/containers/Home',
+        component: 'src/containers/Home'
       },
       {
         path: '/about',
-        component: 'src/containers/About',
+        component: 'src/containers/About'
       },
       {
-        path: '/blog',
+        path: '/location',
         component: 'src/containers/Blog',
         getData: () => ({
-          posts,
+          locations
         }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
+        children: locations.map(location => ({
+          path: `/location/${location.id}`,
           component: 'src/containers/Post',
           getData: () => ({
-            post,
-          }),
-        })),
+            location
+          })
+        }))
       },
       {
         is404: true,
-        component: 'src/containers/404',
-      },
+        component: 'src/containers/404'
+      }
     ]
-  },
+  }
 }
