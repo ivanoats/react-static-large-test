@@ -7,7 +7,7 @@ const city = faker.address.city
 const state = faker.address.state
 const body = faker.lorem.paragraph
 
-const numLocations = 10000
+const numLocations = 100000
 
 for (let i = 0; i < numLocations; i++) {
   const location = {
