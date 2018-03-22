@@ -7,7 +7,12 @@ export default {
   }),
   getRoutes: async () => {
     const { data: locations } = await axios.get(
-      'http://localhost:3001/locations'
+      'http://localhost:3001/locations',
+      {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      }
     )
     return [
       {

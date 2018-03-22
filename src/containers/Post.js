@@ -2,13 +2,13 @@ import React from 'react'
 import { withRouteData, Link } from 'react-static'
 //
 
-export default withRouteData(({ post }) => (
+export default withRouteData(({ location }) => (
   <div>
     <Link to="/location/">{'<'} Back</Link>
     <br />
     <h3>
-      {post.name}, {post.state}
+      {location.name}, {location.state}
     </h3>
-    <p>{post.body}</p>
+    <p>{location.body}</p>
   </div>
 ))
