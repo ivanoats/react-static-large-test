@@ -1,6 +1,6 @@
-const faker = require('faker');
-const fs = require('fs');
-const path = require('path');
+const faker = require('faker')
+const fs = require('fs')
+const path = require('path')
 
 const id = faker.random.uuid
 const city = faker.address.city

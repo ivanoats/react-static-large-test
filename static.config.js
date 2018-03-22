@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export default {
   getSiteData: () => ({
-    title: 'React Static'
+    title: 'React Static Large JSON test'
   }),
   getRoutes: async () => {
     const { data: locations } = await axios.get(
@@ -21,13 +21,13 @@ export default {
       {
         path: '/location',
         component: 'src/containers/Blog',
-        getData: () => ({
+        getData: async () => ({
           locations
         }),
         children: locations.map(location => ({
-          path: `/location/${location.id}`,
+          path: `/${location.id}`,
           component: 'src/containers/Post',
-          getData: () => ({
+          getData: async () => ({
             location
           })
         }))
