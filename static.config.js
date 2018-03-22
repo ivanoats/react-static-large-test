@@ -1,11 +1,14 @@
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
+import axios from 'axios'
 
 export default {
   getSiteData: () => ({
     title: 'React Static'
   }),
   getRoutes: async () => {
-    const { data: locations } = await fetch('http://localhost:3001/locations')
+    const { data: locations } = await axios.get(
+      'http://localhost:3001/locations'
+    )
     return [
       {
         path: '/',

@@ -9,7 +9,6 @@ const numLocations = 10000
 
 module.exports = () => {
   const data = { locations: [] }
-  // Create 1000 users
   for (let i = 0; i < numLocations; i++) {
     const location = {
       id: id(),
