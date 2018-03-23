@@ -7,10 +7,10 @@
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000",
+    "serve": "serve dist -p 8080",
     "loc:clear": "rm -rf tmp/locations && mkdir -p tmp/locations",
     "loc:gen": "node scripts/generateLocations.js",
-    "loc:api": "json-server scripts/serveFakeLocations.js --port 3001 --middlewares scripts/serveCORSHeaders.js"
+    "loc:api": "json-server scripts/serveFakeLocations.js --port 8081 --middlewares scripts/serveCORSHeaders.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
